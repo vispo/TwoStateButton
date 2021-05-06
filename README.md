@@ -21,9 +21,6 @@
  * title is the string that describes the button on mouseover.
  * callback is a function that gets called when the user changes the button.  
  Example:
-    
-    ```
     var myButton = new TwoStateButton('bobButton', 'up.jpg', 'down.jpg', 'microphone', 'Turn mic on/off', function(down) {
-            console.log('down: ' + down);
+        console.log('down: ' + down);
     })
-    ```
