@@ -37,8 +37,8 @@
     <div id="b1"></div>
     <script>
         var b1 = document.getElementById("b1");
-        var b1Button = new TwoStateButton("b1", "images/unpressed.png", "images/pressed.png", "example 2", "example 2 button", function(down) {
-            console.log('down:' + down);
+        var b1Button = new TwoStateButton("b1", "images/unpressed.png", "images/pressed.png", "example 2", "example 2 button", function(event, down) {
+            console.log('button id:' + event.target.id + ' down:' + down);
         });
     </script>
 </body>

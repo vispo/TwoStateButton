@@ -61,7 +61,7 @@ function TwoStateButton(id, upImage, downImage, ariaLabel, title, callback) {
         var bRect = b.getBoundingClientRect();
         if (e.clientX >= bRect.left && e.clientX <= bRect.left + bRect.width && e.clientY >= bRect.top && e.clientY <= bRect.top + bRect.height) {
             toggleValue();
-            callback(b.down);
+            callback(e, b.down);
         }
         setImage();
         window.removeEventListener("mouseup", mUp);
@@ -75,7 +75,7 @@ function TwoStateButton(id, upImage, downImage, ariaLabel, title, callback) {
         }
         toggleValue();
         setImage();
-        callback(b.down)
+        callback(e, b.down)
     }
 
     function toggleValue() {
