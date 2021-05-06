@@ -23,6 +23,6 @@
  
  Example: 
  
-  var myButton = new TwoStateButton('bobButton', 'up.jpg', 'down.jpg', 'microphone', 'Turn mic on/off', function(down) {
-  console.log('down: ' + down);
- })
+    var myButton = new TwoStateButton('bobButton', 'up.jpg', 'down.jpg', 'microphone', 'Turn mic on/off', function(down) {
+        console.log('down: ' + down);
+    })
