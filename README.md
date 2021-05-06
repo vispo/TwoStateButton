@@ -1,20 +1,27 @@
 # TwoStateButton
 
- TwoStateButton by Jim Andrews  
- ## Installation  
- Link to TwoStateButton.js in the head of the HTML file.  
+ by Jim Andrews. 
  
- ## Notes  
+ ## Description  
  I used an earlier version of this in [NeoNio](http://vispo.com/nio/neo).  
- Works with mouse or touch, and is accessible. The CSS for this element must 
- set the width and height of the button, and should set cursor to pointer. 
- The HTML element for the button must have a unique ID. This button, when 
+ Works with mouse or touch, and is accessible. This button, when 
  clicked once, stays down. Clicked again, it comes up. It's like a light 
  switch, or a radio box, or a play/pause button. It's on or off, checked or 
  unchecked, up or down. The button can be tabbed to and has the role=button
  aria attribute as well as a customizable aria-label. The aria-pressed attribute
  is maintained by the code. You can tab to the button; once there, the Enter
- key or the space key will 'click' it. TwoStateButton has 6 parameters:  
+ key or the space key will 'click' it.  
+ 
+ ## Installation  
+ Link to TwoStateButton.js in the head of the HTML file.  
+ 
+ ## Usage  
+ The CSS for this element must 
+ set the width and height of the button, and should set cursor to pointer. 
+ The HTML element for the button must have a unique ID. Do not make a call 
+ to TwoStateButton before the button's HTML element exists.  
+ 
+ TwoStateButton has 6 parameters:  
  
      TwoStateButton(id, upImage, downImage, ariaLabel, title, callback)
     
