@@ -27,7 +27,8 @@
         console.log('down: ' + down);
     })  
 
-There are three methods:  
+There are three methods: 
+
     myButton.element is the DOM button  
     myButton.setDown(boolean) sets whether the button is down (true) or not (false)
     myButton.getDown() returns a boolean as to whether the button is down (true) or not (false).
