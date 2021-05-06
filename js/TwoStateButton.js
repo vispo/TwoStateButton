@@ -32,6 +32,7 @@ function TwoStateButton(id, upImage, downImage, ariaLabel, title, callback) {
     b.addEventListener("keydown", kDown, false);
     b.setAttribute("role", "button");
     b.setAttribute("aria-label", ariaLabel);
+    b.setAttribute("title", title);
     b.setAttribute("tabindex", 0);
 
     this.element = b;
