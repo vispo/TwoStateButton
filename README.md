@@ -1,7 +1,7 @@
 # TwoStateButton
 
  TwoStateButton by Jim Andrews, May, 2021.  
- I used this in [NeoNio](http://vispo.com/nio/neo).  
+ I used an earlier version of this in [NeoNio](http://vispo.com/nio/neo).  
  Works with mouse or touch, and is accessible. The CSS for this element must 
  set the width and height of the button, and should set cursor to pointer. 
  The HTML element for the button must have a unique ID. This button, when 
