@@ -10,17 +10,17 @@
  unchecked, up or down. The button can be tabbed to and has the role=button
  aria attribute as well as a customizable aria-label. The aria-pressed attribute
  is maintained by the code. You can tab to the button; once there, the Enter
- key or the space key will 'click' it. TwoStateButton has 6 parameters:
- TwoStateButton(id, upImage, downImage, ariaLabel, title, callback)
+ key or the space key will 'click' it. TwoStateButton has 6 parameters:  
+ 
+     TwoStateButton(id, upImage, downImage, ariaLabel, title, callback)
     
-    * id is the unique id of the existing element you want to be the button.
-    * upImage is the path to the image for the button when it's up.
-    * downImage is the path to the image for the button when it's down.
-    * ariaLabel is the string that describes the button for accessibility.
-    * title is the string that describes the button on mouseover.
-    * callback is a function that gets called when the user changes the button.
-    
-    Example:
+ * id is the unique id of the existing element you want to be the button.
+ * upImage is the path to the image for the button when it's up.
+ * downImage is the path to the image for the button when it's down.
+ * ariaLabel is the string that describes the button for accessibility.
+ * title is the string that describes the button on mouseover.
+ * callback is a function that gets called when the user changes the button.  
+ Example:
     
     ```
     var myButton = new TwoStateButton('bobButton', 'up.jpg', 'down.jpg', 'microphone', 'Turn mic on/off', function(down) {
