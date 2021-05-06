@@ -19,7 +19,7 @@
  * downImage is the path to the image for the button when it's down.
  * ariaLabel is the string that describes the button for accessibility.
  * title is the string that describes the button on mouseover.
- * callback is a function that gets called when the user changes the button.  
+ * callback is a function that gets called when the user changes the button's state.  
  
  Example: 
  
