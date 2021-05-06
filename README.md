@@ -20,6 +20,7 @@
  * ariaLabel is the string that describes the button for accessibility.
  * title is the string that describes the button on mouseover.
  * callback is a function that gets called when the user changes the button.  
+ 
  Example: 
  
   var myButton = new TwoStateButton('bobButton', 'up.jpg', 'down.jpg', 'microphone', 'Turn mic on/off', function(down) {
