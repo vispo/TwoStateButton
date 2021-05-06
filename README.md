@@ -25,4 +25,9 @@
  
     var myButton = new TwoStateButton('bobButton', 'up.jpg', 'down.jpg', 'microphone', 'Turn mic on/off', function(down) {
         console.log('down: ' + down);
-    })
+    })  
+
+There are three methods:  
+    myButton.element is the DOM button  
+    myButton.setDown(boolean) sets whether the button is down (true) or not (false)
+    myButton.getDown() returns a boolean as to whether the button is down (true) or not (false).
