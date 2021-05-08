@@ -26,10 +26,10 @@
      TwoStateButton(id, upImage, downImage, ariaLabel, title, callback)
     
  * id is the unique id of the existing element you want to be the button.
- * upImage is the path to the image for the button when it's up.
- * downImage is the path to the image for the button when it's down.
- * ariaLabel is the string that describes the button for accessibility.
- * title is the string that describes the button on mouseover.
+ * upImage is the path to the image for the button when it's up. Use "" if there is no upImage.
+ * downImage is the path to the image for the button when it's down. Use "" if there is no downImage.
+ * ariaLabel is the string that describes the button for accessibility. Use "" if there is no ariaLabel.
+ * title is the string that describes the button on mouseover. Use "" if there is no title
  * callback is a function that gets called when the user changes the button's state.  
  
  Example: 
