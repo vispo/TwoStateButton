@@ -27,6 +27,10 @@
  ("Play", in the above)  
  are supported  
  as well as graphic buttons.  
+ TwoStateButton code inserts role="button" and tabindex="0"  
+ in its buttons, and will also insert aria-label and title properties  
+ if you specify non-empty values  
+ for ariaLabel and title parameters.  
  The HTML element for the button must  
  have a unique ID. Do not call  
  TwoStateButton before  
