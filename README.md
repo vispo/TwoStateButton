@@ -16,9 +16,9 @@
  Link to TwoStateButton.js in the head of the HTML file.  
  
  ## Usage  
- The CSS for this element must 
- set the width and height of the button, 
- if you use an upImage and downImage; 
+ The CSS for this element  
+ must set the width and height of the button, 
+ if you use an upImage and downImage;   
  set the CSS cursor property  
  to pointer, in any case.  
  Text buttons, ie,  
