@@ -49,9 +49,9 @@
  
  Example: 
  
-    var myButton = new TwoStateButton('bobButton', 'up.jpg', 'down.jpg', 'microphone', 'Turn mic on/off', function(down) {
-        console.log('down: ' + down);
-    })  
+    var mic = new TwoStateButton('bobButton', 'up.jpg', 'down.jpg', 'microphone', 'Turn mic on/off', function(event, down) {
+        console.log('button id:' + event.target.id + ' down: ' + down);
+    })
 
 There are three methods: 
 
