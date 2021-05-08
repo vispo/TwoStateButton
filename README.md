@@ -17,9 +17,20 @@
  
  ## Usage  
  The CSS for this element must 
- set the width and height of the button, and should set cursor to pointer. 
- The HTML element for the button must have a unique ID. Do not make a call 
- to TwoStateButton before the button's HTML element exists.  
+ set the width and height of the button, 
+ if you use an upImage and downImage; 
+ set the CSS cursor property  
+ to pointer, in any case.  
+ Text buttons, ie,  
+ <div class="TwoStateButton" role="button" aira-label="Sound" tabindex="0">Play</div>  
+ where the button displays text  
+ ("Play", in the above)  
+ are supported  
+ as well as graphic buttons.  
+ The HTML element for the button must  
+ have a unique ID. Do not call  
+ TwoStateButton before  
+ the button's HTML element exists.  
  
  TwoStateButton has 6 parameters:  
  
