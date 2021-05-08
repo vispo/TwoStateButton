@@ -22,7 +22,7 @@
  set the CSS cursor property  
  to pointer, in any case.  
  Text buttons, ie,  
- <div class="TwoStateButton" role="button" aira-label="Sound" tabindex="0">Play</div>  
+ &lt;div class="TwoStateButton" role="button" aira-label="Sound" tabindex="0"&gt;Play&lt;/div&gt;  
  where the button displays text  
  ("Play", in the above)  
  are supported  
