@@ -10,7 +10,7 @@
             position:absolute;
             cursor:pointer;
             left:100px;
-            top:100px;
+            top:200px;
             width:160px;
             height:60px;
             background-position: center center;
@@ -22,22 +22,28 @@
         #b1:hover {
             background-color: red;
         }
-
-        #b1:active {
-            background-color:yellow;
-        }
     </style>
 </head>
 <body>
     <p>
-        Example 2. The two state button works with mouse, touch, or keyboard. The HTML for the two-state button must have 
-        a unique ID. The CSS for the two-state button needs to declare the width and height of the button, and should also
-        set cursor:pointer.
+        <ul>
+            <li>Example 2.</li>
+            <li>This is same as Example 1 except different graphic language (pressed/unpressed)</li>
+            <li>The two state button works with mouse, touch, or keyboard.</li>
+            <li>The HTML for the two-state button must have a unique ID.</li>
+            <li>The CSS for the two-state button needs to declare the width and height of the button, if upImage or
+                downImage is specified.</li>
+            <li>Set CSS cursor property to pointer.</li>
+            <li>Don't call TwoStateButton before the button's DOM element exists.</li>
+        </ul>
     </p>
     <div id="b1"></div>
     <script>
+        // The script is down here so we don't call TwoStateButton
+        // before DOM element b1 exists.
         var b1 = document.getElementById("b1");
-        var b1Button = new TwoStateButton("b1", "images/unpressed.png", "images/pressed.png", "example 2", "example 2 button", function(event, down) {
+        var b1Button = new TwoStateButton("b1", "images/unpressed.png", "", "images/pressed.png", "", "example 2", "example 2 button", function(event, down) {
+            // The parameters are: id, upImage, upText, downImage, downText, ariaLabel, title, callback
             console.log('button id:' + event.target.id + ' down:' + down);
         });
     </script>

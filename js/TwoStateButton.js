@@ -7,29 +7,34 @@
     or a radio box, or a play/pause button. It's on or off, checked or unchecked, 
     up or down. 
     Example: 
-    var myButton = new TwoStateButton('bobButton', 'up.jpg', 'down.jpg', 'microphone', 'Turn mic on/off', function(down) {
+    var myButton = new TwoStateButton('bobButton', 'up.jpg', "", 'down.jpg', "", 'microphone', 'Turn mic on/off', function(down) {
             whatever;
     })
 */
 
-function TwoStateButton(id, upImage, downImage, ariaLabel, title, callback) {
+function TwoStateButton(id, upImage, upText, downImage, downText, ariaLabel, title, callback) {
     /* 
     -- id is the id of the DOM element that is the button.
     -- upImage is the path to the graphic displayed when user does not have mousedown.
        Use "" if there is no up image.
+    -- upText is the string that displays on the button when it is up.
+       Use "" if there is no upText.
     -- downImage is the path to the graphic displayed when user presses mouse or touches button.
        Use "" if there is no down image.
+    -- downText is the string that displays when the button is down.
     -- ariaLabel is the string used to describe the button for accessibility.
        Use "" if there is no ariaLabel
     -- title is the string that displays near the button on mouseover.
        Use "" if there is no title.
-    -- callback is called after button is clicked. It takes at least one parameter,
+    -- callback is called after button is clicked. It takes at least two parameters.
        a boolean, that indicates if the button is down (true) or up (false).
     */
     var b = document.getElementById(id); // b for button 
     if (downImage) b.style.backgroundImage = "url(" + downImage + ")";
     if (upImage) b.style.backgroundImage = "url(" + upImage + ")";
     b.down = false;
+    b.downText = downText;
+    b.upText = upText || b.textContent;
     b.setAttribute("aria-pressed", b.down);
     b.addEventListener("mousedown", mDown, false);
     b.addEventListener("touchstart", mDown, false);
@@ -46,6 +51,16 @@ function TwoStateButton(id, upImage, downImage, ariaLabel, title, callback) {
         b.down = aBoolean;
         b.setAttribute("aria-pressed", aBoolean);
         setImage();
+        if (aBoolean) {
+            if (b.downText) {
+                b.textContent = b.downText;
+            }
+        }
+        else {
+            if (b.upText) {
+                b.textContent = b.upText;
+            }
+        }
     }
 
     this.getDown = function() {
@@ -56,8 +71,13 @@ function TwoStateButton(id, upImage, downImage, ariaLabel, title, callback) {
     function mDown(e) {
         // Runs when mouse goes down or touch starts.
         if (downImage) b.style.backgroundImage = "url(" + downImage + ")";
-        window.addEventListener("mouseup", mUp, false);
-        window.addEventListener("touchend", mUp, false);
+        if (b.downText) b.textContent = b.downText;
+        var t1 = window.removeEventListener("mouseup", mUp, {passive: true});
+        var t2 = window.removeEventListener("touchend", mUp, {passive: true});
+        console.log('mUp removed via mouseup: ' + t1 + ' mUp removed via touchend: ' + t2);
+        window.addEventListener("mouseup", mUp, {passive: true});
+        window.addEventListener("touchend", mUp, {passive: true});
+        //e.preventDefault(); Causes Android problems
     }
 
     function mUp(e) {
@@ -68,8 +88,15 @@ function TwoStateButton(id, upImage, downImage, ariaLabel, title, callback) {
             callback(e, b.down);
         }
         setImage();
-        window.removeEventListener("mouseup", mUp);
-        window.removeEventListener("touchend", mUp);
+        if (b.down) {
+            b.textContent = b.downText;
+        }
+        else {
+            b.textContent = b.upText;
+        }
+        window.removeEventListener("mouseup", mUp, {passive: true});
+        window.removeEventListener("touchend", mUp, {passive: true});
+        //console.log(b.down);
     }
 
     function kDown(e) {

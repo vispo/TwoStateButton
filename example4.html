@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TwoStateButton.js example</title>
+    <style>
+        .button {
+            color:black;
+            width:60px;
+            height:60px;
+            cursor:pointer;
+            background-color: maroon;
+            line-height:60px;
+            text-align: center;
+        }
+    </style>
+    <script src="js/TwoStateButton.js"></script>
+</head>
+<body>
+    <div>
+        <pre>TwoStateButton(id, upImage, downImage, ariaLabel, title, callback)</pre>
+        -- Works with touch, mouse and is accessible via keyboard.<br>
+        -- If mouseup occurs outside of button, button goes up.<br>
+        <ul>
+            <li> id is the id of the DOM element that is the button.<br>
+            <li> upImage is the path to the graphic displayed when user does not have mouse down.<br>
+            <li> downImage is the path to the graphic displayed when user presses mouse or touches button.<br>
+            <li> ariaLabel is the string used to describe the button for accessibility.<br>
+            <li> title is the string that displays near the button on mouseover.<br>
+            <li> callback is called after button is clicked.<br>
+        </ul>
+        The CSS style attached to the button must specify the width and height.<br>
+        The CSS style attached to the button should also specify cursor:pointer<br>
+        Example:<br>
+        <pre>
+var button = new TwoStateButton("b1", "up.jpg", "down.jpg", "description 1", "description 2", function(e) {
+    // Runs when the element with id="b1" is clicked.
+    console.log(e.target.id);
+} 
+        </pre>
+    </div>
+    <div>b1</div>
+    <div id="b1" class="button">Print</div>
+    <div>b2</div>
+    <div id="b2" class="button"></div>
+    <script>
+        document.getElementById("b1").button = new TwoStateButton("b1", "", "Print", "", "Printing", "paper", "wax", function(e) {
+            console.log('button id: ' + e.target.id);
+        })
+        document.getElementById("b2").button = new TwoStateButton("b2", "images/up.jpg", "", "images/down.jpg", "", "robin", "sparrow", function(e) {
+            console.log('button id: ' + e.target.id);
+        })
+    </script>
+
+</body>
+</html>
