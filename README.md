@@ -36,20 +36,22 @@
  TwoStateButton before  
  the button's HTML element exists.  
  
- TwoStateButton has 6 parameters:  
+ TwoStateButton has 8 parameters:  
  
-     TwoStateButton(id, upImage, downImage, ariaLabel, title, callback)
+     TwoStateButton(id, upImage, upText, downImage, downText, ariaLabel, title, callback)
     
  * id is the unique id of the existing element you want to be the button.
  * upImage is the path to the image for the button when it's up. Use "" if there is no upImage.
+ * upText is the text (if any) that is displayed when the button is up. Use "" if there is no upText.
  * downImage is the path to the image for the button when it's down. Use "" if there is no downImage.
+ * downText is the text (if any) that is displayed when the button is down. Use "" if there is no downText.
  * ariaLabel is the string that describes the button for accessibility. Use "" if there is no ariaLabel.
  * title is the string that describes the button on mouseover. Use "" if there is no title
  * callback is a function that gets called when the user changes the button's state.  
  
  Example: 
  
-    var mic = new TwoStateButton('bobButton', 'up.jpg', 'down.jpg', 'microphone', 'Turn mic on/off', function(event, down) {
+    var mic = new TwoStateButton('bobButton', 'up.jpg', '', 'down.jpg', '', 'microphone', 'Turn mic on/off', function(event, down) {
         console.log('button id:' + event.target.id + ' down: ' + down);
     })
 
