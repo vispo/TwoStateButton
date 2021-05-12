@@ -3,7 +3,7 @@
  by Jim Andrews. 
  
  ## Description  
- I used an earlier version of this in [NeoNio](http://vispo.com/nio/neo).  
+ I used this in [NeoNio](http://vispo.com/nio/neo) for the on the sound icons in verse 1 and for several blue buttons in both verse 1 and verse 2.  
  Works with mouse or touch, and is accessible. This button, when 
  clicked once, stays down. Clicked again, it comes up. It's like a light 
  switch, or a radio box, or a play/pause button. It's on or off, checked or 
